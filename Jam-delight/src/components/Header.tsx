@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Contact } from '../pages/Contact'
+
 
 export function Header() {
   return (
