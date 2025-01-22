@@ -5,12 +5,14 @@ export function ProductCard({ product }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
-      {/* Image */}
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-60 object-cover"
-      />
+      {/* Image Container */}
+      <div className="w-full h-64 relative">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
       {/* Content */}
       <div className="p-6 flex flex-col justify-between flex-1">
         {/* Title */}
