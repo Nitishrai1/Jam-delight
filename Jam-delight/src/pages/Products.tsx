@@ -1,12 +1,6 @@
+import { useState } from 'react';
 import { Header } from '../components/Header';
 import { ProductCard } from '../components/ProductCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-
-SwiperCore.use([Navigation, Pagination]);
 
 const products = [
   {
@@ -47,30 +41,47 @@ const products = [
 ];
 
 export function Products() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === products.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <>
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8">Our Jams</h1>
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-          }}
-          className="mySwiper"
-        >
-          {products.map((product) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard product={product} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <h1 className="text-3xl font-bold mb-8 text-center">Our Jams</h1>
+        <div className="relative">
+          {/* Slider Content */}
+          <div className="flex items-center justify-center">
+            <ProductCard product={products[currentIndex]} />
+          </div>
+
+          {/* Previous Button */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700"
+          >
+            &#8249;
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700"
+          >
+            &#8250;
+          </button>
+        </div>
       </main>
     </>
   );
