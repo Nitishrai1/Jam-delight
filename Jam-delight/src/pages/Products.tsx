@@ -63,7 +63,10 @@ export function Products() {
         <div className="relative">
           {/* Slider Content */}
           <div className="flex items-center justify-center">
-            <ProductCard product={products[currentIndex]} />
+            <div className="w-full max-w-lg">
+              {/* Increased width and height */}
+              <ProductCard product={products[currentIndex]} />
+            </div>
           </div>
 
           {/* Previous Button */}
