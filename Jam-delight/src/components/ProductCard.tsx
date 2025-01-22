@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
         <p className="text-gray-600 mb-4">{product.description}</p>
         <div className="flex justify-between items-center">
-          <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
+          <span className="text-lg font-bold">Rs:{product.price.toFixed(2)}</span>
           <button
             onClick={() => addToCart(product)}
             className="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700"
