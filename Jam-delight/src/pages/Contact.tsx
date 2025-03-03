@@ -83,7 +83,7 @@ export function Contact() {
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <p className="mb-4">We'd love to hear from you! Whether you have a question about our products, need assistance with an order, or just want to share your jam experiences, we're here to help.</p>
             <div className="space-y-2">
-              <p><strong>Address:</strong> 123 Jam Street, Sweet City, JM 12345</p>
+              <p><strong>Address:</strong>B11, Block B, Qutab Institutional Area, New Delhi, Delhi 110016</p>
               <p><strong>Phone:</strong> (555) 123-4567</p>
               <p><strong>Email:</strong> hello@jamdelight.com</p>
             </div>
