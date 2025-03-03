@@ -1,6 +1,17 @@
 import { useCart } from '../context/CartProvider';
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
 
-export function ProductCard({ product }) {
+interface ProductCardProps {
+  product: Product;
+}
+
+export function ProductCard({ product}:ProductCardProps) {
   const { addToCart } = useCart();
 
   return (
